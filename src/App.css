@@ -1,0 +1,81 @@
+.right-nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+main {
+  background-color: rgb(10, 108, 163);
+  color: white;
+  padding: 40px;
+}
+
+.image-wrapper > div {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.image-1 {
+  background-image: url(https://www.beechbrook.org/files/callouts/home-row-1/become-a-foster-parent.jpg);
+}
+
+.image-2 {
+  background-image: url(https://www.beechbrook.org/files/callouts/home-row-1/personal-impact-stories.jpg);
+}
+
+.image-3 {
+  background-image: url(https://www.beechbrook.org/files/callouts/home-row-1/adult-childphoto.jpeg);
+}
+
+#iosArrow {
+  background-color: yellow;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+h3 {
+  margin: 0;
+  color: white;
+  /* padding: 20px 40px; */
+  padding-right: 0px;
+}
+
+.image-inner-wrapper {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  cursor: pointer;
+  padding: 20px 40px;
+}
+
+.image-inner-wrapper > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+@media screen and (min-width: 1000px) {
+  .image-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .image-wrapper > div {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .wrapper {
+    width: 1400px;
+    margin: 0 auto;
+  }
+}
