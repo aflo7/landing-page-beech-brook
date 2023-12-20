@@ -24,8 +24,6 @@ concurrency:
 
 
 jobs:
-  env:
-    VITE_INTERNAL: true
   # Single deploy job since we're just deploying
   deploy:
     environment:
