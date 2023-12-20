@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 .right-nav {
   display: flex;
   align-items: center;
@@ -68,6 +72,45 @@ h3 {
   cursor: pointer;
 }
 
+.sign-up-wrapper {
+  background-color: white;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding: 40px;
+  border: 5px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sign-up-wrapper input {
+  padding: 10px;
+}
+
+#signUpBtn {
+  background-color: rgb(237, 191, 111);
+  border: none;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.sign-up-text {
+  text-transform: uppercase;
+}
+
+.notNowText {
+  color: gray;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.notNowText:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 1000px) {
   .image-wrapper {
     display: flex;
@@ -79,7 +122,8 @@ h3 {
   }
 }
 @media screen and (min-width: 1400px) {
-  .wrapper {
+  .wrapper,
+  .sign-up-wrapper {
     width: 1400px;
     margin: 0 auto;
   }

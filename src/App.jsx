@@ -5,10 +5,19 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoIosArrowForward } from 'react-icons/io';
 import ThePanel from './components/ThePanel';
+import { addUser } from './functions/write';
 
 function App() {
   const [showPanel, setShowPanel] = useState(false);
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const result = addUser(email, firstName, lastName);
+    console.log(result)
+  }
   return (
     <div className="wrapper">
       <nav
@@ -77,6 +86,63 @@ function App() {
               </div>
             </div>
           </div>
+          <form className="sign-up-wrapper" onSubmit={handleSubmit}>
+            <div className="sign-up-text">Sign Up</div>
+            <div>Never miss out on the latest from Beech Brook.</div>
+
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <label htmlFor="email" style={{ textTransform: 'uppercase' }}>
+                Email Address
+              </label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div style={{ display: 'flex', gap: '20px' }}>
+              <div
+                style={{ display: 'flex', flexDirection: 'column', flex: 1 }}
+              >
+                <label
+                  htmlFor="firstName"
+                  style={{ textTransform: 'uppercase' }}
+                >
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+              </div>
+              <div
+                style={{ display: 'flex', flexDirection: 'column', flex: 1 }}
+              >
+                <label
+                  htmlFor="lastName"
+                  style={{ textTransform: 'uppercase' }}
+                >
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+            </div>
+            <button type="text" id="signUpBtn">
+              Sign Up
+            </button>
+            <div className="notNowText">Not now, maybe later.</div>
+          </form>
         </>
       )}
     </div>
