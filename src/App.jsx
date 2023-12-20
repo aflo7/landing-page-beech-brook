@@ -13,10 +13,10 @@ function App() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const result = addUser(email, firstName, lastName);
-    console.log(result)
+    await addUser(email, firstName, lastName);
+    
   }
   return (
     <div className="wrapper">
@@ -95,6 +95,7 @@ function App() {
                 Email Address
               </label>
               <input
+                required
                 type="text"
                 id="email"
                 name="email"
@@ -113,6 +114,7 @@ function App() {
                   First Name
                 </label>
                 <input
+                  required
                   type="text"
                   id="firstName"
                   name="firstName"
@@ -130,6 +132,7 @@ function App() {
                   Last Name
                 </label>
                 <input
+                  required
                   type="text"
                   id="lastName"
                   name="lastName"
