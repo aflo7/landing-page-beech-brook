@@ -16,7 +16,6 @@ function App() {
   async function handleSubmit(e) {
     e.preventDefault();
     await addUser(email, firstName, lastName);
-    
   }
   return (
     <div className="wrapper">
@@ -30,8 +29,6 @@ function App() {
           height="40px"
         />
         <div className="right-nav">
-          <IoCartOutline size="1.5rem" />
-          <FaPhoneAlt size="1.2rem" />
           <RxHamburgerMenu
             size="1.5rem"
             onClick={() => setShowPanel((prev) => !prev)}
@@ -103,47 +100,35 @@ function App() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div style={{ display: 'flex', gap: '20px' }}>
-              <div
-                style={{ display: 'flex', flexDirection: 'column', flex: 1 }}
-              >
-                <label
-                  htmlFor="firstName"
-                  style={{ textTransform: 'uppercase' }}
-                >
-                  First Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-              </div>
-              <div
-                style={{ display: 'flex', flexDirection: 'column', flex: 1 }}
-              >
-                <label
-                  htmlFor="lastName"
-                  style={{ textTransform: 'uppercase' }}
-                >
-                  Last Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <label htmlFor="firstName" style={{ textTransform: 'uppercase' }}>
+                First Name
+              </label>
+              <input
+                required
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </div>
-            <button type="text" id="signUpBtn">
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <label htmlFor="lastName" style={{ textTransform: 'uppercase' }}>
+                Last Name
+              </label>
+              <input
+                required
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+            <div type="text" id="signUpBtn">
               Sign Up
-            </button>
+            </div>
             <div className="notNowText">Not now, maybe later.</div>
           </form>
         </>
