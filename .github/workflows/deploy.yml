@@ -9,6 +9,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  VITE_INTERNAL: true
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -20,10 +22,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-env:
-  VITE_INTERNAL: true
-  
+
 jobs:
+  env:
+    VITE_INTERNAL: true
   # Single deploy job since we're just deploying
   deploy:
     environment:
